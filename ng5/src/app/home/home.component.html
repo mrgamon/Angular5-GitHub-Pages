@@ -12,13 +12,12 @@
     <p class="sm">Use this form below to add a new bucket list.</p>
     <form>
       <input type="txt" class="txt" name="item" placeholder="Life goal.." [(ngModel)]="goalText">
-      <br><span>{{ goalText }}</span>
-      <input type="submit" class="btn" value="{{ btnText }}">
+      <input type="submit" class="btn" value="{{ btnText }}" (click)="addItem()">
     </form>
   </div>
   <div class="col">
-    <p class="life-container">
-      I want to clim a mountain
+    <p class="life-container" *ngFor ="let goal of goals">
+    {{ goal }}
     </p>
   </div>
 </div>
